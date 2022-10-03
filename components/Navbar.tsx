@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../utils/firebase";
 
@@ -18,10 +19,16 @@ export const Navbar = () => {
           </Link>
         )}
         {user && (
-          <div>
+          <div className="flex flex-row justify-between items-center gap-2">
+            <p className="text-sm">{user.displayName}</p>
             <Link href={"/dashboard"}>
-              <p>{user.displayName}</p>
-              {/* <img src={user.photoURL} alt="Picture of the author" /> */}
+              <picture>
+                <img
+                  src={user.photoURL!}
+                  alt="Picture of the author"
+                  className="h-10 w-10 rounded-md"
+                />
+              </picture>
             </Link>
           </div>
         )}

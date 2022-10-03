@@ -32,12 +32,12 @@ const Login = () => {
   const FacebookLogin = async () => {
     try {
       const result = await signInWithPopup(auth, fbProvider);
-      //   const credential = await FacebookAuthProvider.credentialFromResult(
-      //     result
-      //   );
-      //   const token = credential?.accessToken;
-      //   let photoUrl = result.user.photoURL + "?height=500&access_token=" + token;
-      //   await updateProfile(auth.currentUser, { photoURL: photoUrl });
+      const credential = await FacebookAuthProvider.credentialFromResult(
+        result
+      );
+      const token = credential?.accessToken;
+      let photoUrl = result.user.photoURL + "?height=500&access_token=" + token;
+      updateProfile(auth.currentUser!, { photoURL: photoUrl });
       route.push("/dasboard");
     } catch (error) {
       console.log(error);

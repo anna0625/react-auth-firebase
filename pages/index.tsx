@@ -9,8 +9,8 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h2 className="text-2xl mt-1">React Auth</h2>
+      <main className="text-center">
+        <h2 className="text-2xl my-3">React Auth</h2>
         <h3>Mini Project I learnt from developedbyed Youtube Channel.</h3>
       </main>
     </div>

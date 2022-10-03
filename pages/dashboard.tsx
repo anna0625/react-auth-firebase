@@ -4,8 +4,8 @@ import { auth } from "../utils/firebase";
 import { useRouter } from "next/router";
 
 const Dashboard = () => {
-  const [user, loading] = useAuthState(auth);
   const route = useRouter();
+  const [user, loading] = useAuthState(auth);
 
   if (loading) return <h1>Loading...</h1>;
   if (!user) route.push("/auth/login");
